@@ -1,24 +1,11 @@
 import React from 'react';
 import {SafeAreaView, Text, View, Image, StyleSheet} from 'react-native';
+import ListaProdutos from './views/ListaProdutos';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.containerTitulo}>
-        <Text style={styles.titulo}>Lighteria</Text>
-        <View style={styles.containerSacola}>
-          <Image
-            source={require('./assets/images/icone-sacola.png')}
-            style={styles.imagem}
-          />
-        </View>
-      </View>
-      <View style={styles.containerDescricao}>
-        <View style={styles.separador} />
-        <View style={styles.containerTexto}>
-          <Text style={styles.textoDescricao}>Categorias</Text>
-        </View>
-      </View>
+      <ListaProdutos />
     </SafeAreaView>
   );
 };
@@ -47,13 +34,12 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
   },
+  containerDescricao: {
+    paddingHorizontal: 24,
+  },
   separador: {
     borderWidth: 0.5,
     borderColor: '#A1A5AA',
-    margin: 10,
-  },
-  containerDescricao: {
-    paddingHorizontal: 16,
   },
   containerTexto: {
     flexDirection: 'row',
@@ -61,12 +47,12 @@ const styles = StyleSheet.create({
     marginTop: -46,
   },
   textoDescricao: {
-    padding: 24,
+    paddingHorizontal: 34,
     backgroundColor: '#F4F0F4',
-    color: '#A1A5AA',
-    fontFamily: 'OpenSans-Regular',
     fontSize: 16,
-  },
+    fontFamily: 'OpenSans-Regular',
+    color: '#A1A5AA'
+  }
 });
 
 export default App;
