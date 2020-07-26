@@ -19,9 +19,9 @@ const ListaProdutos = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        marginHorizontal: 24,
-    }
-})
+  container: {
+    marginHorizontal: 24,
+  },
+});
 
 export default ListaProdutos;
