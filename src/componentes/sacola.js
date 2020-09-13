@@ -15,15 +15,15 @@ export const Sacola = () => {
           source={require('../assets/images/icone-sacola.png')}
           style={styles.imagem}
         />
-        {/* {itensCheckout.length > 0 ? (
+        {itensCheckout.length > 0 ? (
           <View style={styles.containerQuantidade}>
             <Text style={styles.textoQuantidade}>
               {itensCheckout.reduce(
-                (acumulado, atual) => acumulado + atual.quantidade,
+                (acumulado, atual) => acumulado + atual.quantidade, 0
               )}
             </Text>
           </View>
-        ) : null} */}
+        ) : null}
       </View>
     </TouchableOpacity>
   );
