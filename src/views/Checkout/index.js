@@ -1,19 +1,18 @@
 import React, {useContext} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {DataContext} from '../../provider';
-import {useNavigation} from '@react-navigation/native';
 import {
+  COR_BOTAO_ACAO,
+  FONT_FAMILY_BOLD,
   FONT_FAMILY_SEMI_BOLD,
-  FONT_SIZE_XX_LARGE,
   FONT_SIZE_LARGE,
   FONT_SIZE_SMALL,
-  FONT_FAMILY_BOLD,
-  COR_BOTAO_ACAO,
+  FONT_SIZE_XX_LARGE,
 } from '../../styles/styles';
-import {formataValor} from '../../utils/utils';
 import {Botao} from '../../componentes/botao';
+import {formataValor} from '../../utils/utils'
 import { CheckoutItem } from './checkoutItem';
-
+import { useNavigation } from '@react-navigation/native';
 export const Checkout = () => {
   const {itensCheckout} = useContext(DataContext);
   const navigation = useNavigation();
@@ -24,18 +23,17 @@ export const Checkout = () => {
   );
 
   const Titulo = ({children}) => <Text style={styles.titulo}>{children}</Text>;
-  const Total = ({children}) => (
-    <Text style={styles.total}>Total: {children}</Text>
-  );
+  const Total = ({children}) => <Text style={styles.total}>{children}</Text>;
+
   return (
     <View style={styles.container}>
       <Titulo>Checkout</Titulo>
       {itensCheckout.map((item) => (
-        <CheckoutItem {...item}/>
+        <CheckoutItem {...item} />
       ))}
       <Total>{formataValor(valorTotal)}</Total>
-      <Botao onPress={() => null} titulo={'FINALIZAR COMPRA'} />
-      <TouchableOpacity>
+      <Botao titulo={'FINALIZAR COMPRA'} />
+      <TouchableOpacity onPress={() => navigation.push('ListaProdutos')}>
         <Text style={styles.continuarTexto}>Continuar comprando</Text>
       </TouchableOpacity>
     </View>
@@ -50,6 +48,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontFamily: FONT_FAMILY_SEMI_BOLD,
     fontSize: FONT_SIZE_XX_LARGE,
+    marginBottom: 10
   },
   total: {
     fontSize: FONT_SIZE_LARGE,
@@ -57,10 +56,10 @@ const styles = StyleSheet.create({
     marginVertical: 36,
   },
   continuarTexto: {
-    fontSize: FONT_SIZE_SMALL,
     fontFamily: FONT_FAMILY_BOLD,
+    fontSize: FONT_SIZE_SMALL,
     color: COR_BOTAO_ACAO,
     marginTop: 20,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
