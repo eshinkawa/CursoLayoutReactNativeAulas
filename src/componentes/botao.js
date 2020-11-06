@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, Text, TouchableOpacity, Stylesheet} from 'react-native';
 import {
   LIGHTBLUE,
   FONT_FAMILY_SEMI_BOLD,
@@ -9,13 +9,15 @@ import {
 
 export const Botao = ({titulo, onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.botaoContainer}>
-      <Text style={styles.texto}>{titulo}</Text>
+    <TouchableOpacity onPress={onPress}>
+      <View style={styles.botaoContainer}>
+        <Text style={style.botaoTexto}>{titulo}</Text>
+      </View>
     </TouchableOpacity>
   );
 };
 
-const styles = StyleSheet.create({
+const style = Stylesheet.create({
   botaoContainer: {
     backgroundColor: LIGHTBLUE,
     padding: 20,
@@ -25,6 +27,5 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY_SEMI_BOLD,
     fontSize: FONT_SIZE_MEDIUM,
     color: WHITE,
-    textAlign: 'center',
   },
 });

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {View, StyleSheet, Text, Image} from 'react-native';
 import {
   FONT_FAMILY_BOLD,
@@ -16,6 +16,9 @@ import {formataValor} from '../../../../utils/utils';
 import {Botao} from '../../../../componentes/botao';
 import {useNavigation} from '@react-navigation/native';
 import {DataContext} from '../../../../provider';
+import {formataValor} from '../../../../utils/utils';
+import {Botao} from '../../../../componentes/botao';
+import {useNavigation} from '@react-navigation/native';
 
 export const DescricaoItem = ({
   imagem,
@@ -27,7 +30,6 @@ export const DescricaoItem = ({
   id,
 }) => {
   const navigation = useNavigation();
-  const {adicionarItem} = useContext(DataContext);
   return (
     <View style={styles.itemContainer}>
       <View style={styles.itemPosicao}>
@@ -47,17 +49,7 @@ export const DescricaoItem = ({
             <Text style={styles.moeda}>{formataValor(preco)}</Text>
             <Botao
               titulo={'COMPRAR'}
-              onPress={() =>
-                adicionarItem({
-                  imagem,
-                  estudio,
-                  itemDesc,
-                  titulo,
-                  itemName,
-                  preco,
-                  id,
-                })
-              }
+              onPress={() => navigation.push('Checkout')}
             />
           </View>
         </View>
