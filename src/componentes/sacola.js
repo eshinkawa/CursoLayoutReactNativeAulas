@@ -19,7 +19,8 @@ export const Sacola = () => {
           <View style={styles.containerQuantidade}>
             <Text style={styles.textoQuantidade}>
               {itensCheckout.reduce(
-                (acumulado, atual) => acumulado + atual.quantidade, 0
+                (acumulado, atual) => acumulado + atual.quantidade,
+                0,
               )}
             </Text>
           </View>
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
   },
   containerQuantidade: {
     backgroundColor: RED,
-    borderRadius: 100,
+    borderRadius: 50,
     marginTop: -22,
     marginLeft: 11,
   },

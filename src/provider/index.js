@@ -11,7 +11,7 @@ const Provider = ({children}) => {
         adicionarItem: (novoItem) => {
           console.log(`item adicionado: ${JSON.stringify(novoItem)}`);
           console.log(itensCheckout);
-          let copiaItensCheckout = [...itensCheckout]; 
+          let copiaItensCheckout = [...itensCheckout];
           let itemFiltrado = copiaItensCheckout.find(
             (itensCheckout) => itensCheckout.id === novoItem.id,
           );

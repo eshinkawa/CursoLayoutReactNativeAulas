@@ -10,9 +10,9 @@ import {
   FONT_SIZE_XX_LARGE,
 } from '../../styles/styles';
 import {Botao} from '../../componentes/botao';
-import {formataValor} from '../../utils/utils'
-import { CheckoutItem } from './checkoutItem';
-import { useNavigation } from '@react-navigation/native';
+import {formataValor} from '../../utils/utils';
+import {CheckoutItem} from './checkoutItem';
+import {useNavigation} from '@react-navigation/native';
 export const Checkout = () => {
   const {itensCheckout} = useContext(DataContext);
   const navigation = useNavigation();
@@ -29,7 +29,7 @@ export const Checkout = () => {
     <View style={styles.container}>
       <Titulo>Checkout</Titulo>
       {itensCheckout.map((item) => (
-        <CheckoutItem {...item} />
+        <CheckoutItem {...item} key={item.id} />
       ))}
       <Total>{formataValor(valorTotal)}</Total>
       <Botao titulo={'FINALIZAR COMPRA'} />
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontFamily: FONT_FAMILY_SEMI_BOLD,
     fontSize: FONT_SIZE_XX_LARGE,
-    marginBottom: 10
+    marginBottom: 10,
   },
   total: {
     fontSize: FONT_SIZE_LARGE,

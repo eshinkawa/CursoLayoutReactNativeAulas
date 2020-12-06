@@ -5,6 +5,7 @@ export const WHITE = '#fff';
 export const LIGHTGRAY = '#CACACA';
 export const LIGHTERGRAY = '#ACAAAB';
 export const LIGHTBLUE = '#00adef';
+export const RED = 'red';
 
 // TIPOGRAFIA
 export const FONT_FAMILY_LIGHT = 'OpenSans-Light';

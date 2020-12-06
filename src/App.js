@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, Text, View, Image, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import ListaProdutos from './views/ListaProdutos';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
